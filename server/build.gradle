@@ -12,6 +12,9 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application
     id 'application'
+
+    // Mongo plugin allows us to run a seperate instance of MongoDB for testing
+    id 'com.sourcemuse.mongo' version '1.0.7'
 }
 
 repositories {
@@ -48,4 +51,15 @@ application {
 test {
     // Use junit platform for unit tests
     useJUnitPlatform()
+
+    runWithMongoDb = true
+
+    mongo {
+      port 'random'
+      mongoVersion '3.4.23' // should match lab version
+      //logging 'console'
+    }
+
+    systemProperty "test.mongo.port", project.mongo.port
 }
+
