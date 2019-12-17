@@ -21,8 +21,17 @@ repositories {
 }
 
 dependencies {
-    // This dependency is used by the application.
+    // Google core libraries for Java, various useful utilities
     implementation 'com.google.guava:guava:28.0-jre'
+
+    // Spark web framework
+    implementation 'com.sparkjava:spark-core:2.9.1'
+
+    // Simple Logging Facade for Java
+    implementation 'org.slf4j:slf4j-simple:1.7.26'
+
+    // MongoDB driver
+    implementation 'org.mongodb:mongodb-driver-sync:3.11.1'
 
     // Use JUnit Jupiter API for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
@@ -33,7 +42,7 @@ dependencies {
 
 application {
     // Define the main class for the application
-    mainClassName = 'umm3601.App'
+    mainClassName = 'umm3601.Server'
 }
 
 test {
