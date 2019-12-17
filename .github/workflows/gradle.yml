@@ -14,4 +14,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      run: ./server/gradlew build
+      run: |
+        cd server
+        ./gradlew build
